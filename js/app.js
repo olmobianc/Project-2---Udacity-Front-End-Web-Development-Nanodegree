@@ -18,6 +18,7 @@
  * 
 */
 
+const sections = document.querySelectorAll("section");
 
 /**
  * End Global Variables

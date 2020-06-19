@@ -100,6 +100,10 @@ section {
     color: orange;
 }
 
+.active {
+    color: orange !important;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
