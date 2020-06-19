@@ -18,7 +18,6 @@
  * 
 */
 
-const navElements = document.createElement('li');
 
 /**
  * End Global Variables
@@ -39,8 +38,12 @@ const navbar = document.getElementById('navbar__list');
 const contatore = document.getElementsByClassName('landing__container');
 
 for(let i=1; i<=contatore.length; i++) {
-    navElements.innerHTML = `Section ${i}`;
-    console.log('Section ' + i);
+    const navElements = document.createElement('li');
+    const navLinks = document.createElement('a');
+    navLinks.innerHTML = `Section ${i}`;
+    navLinks.classList.add("navLinks");
+    navLinks.setAttribute("href", `#section${i}`);
+    navElements.appendChild(navLinks);
     navbar.appendChild(navElements);
 }
 
@@ -48,6 +51,16 @@ for(let i=1; i<=contatore.length; i++) {
 
 
 // Scroll to anchor ID using scrollTO event
+const navlinks = document.getElementsByClassName("navLinks");
+for(let i = 0; i < navlinks.length; i++) {
+    navlinks[i].addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+}    
 
 
 /**
