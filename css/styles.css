@@ -141,6 +141,14 @@ section {
     }
 }
 
+@media(max-width:600px) {
+    .navbar__menu li {
+        padding: 3px;
+        font-size: 13px;
+        margin-right:3px;
+    }
+}
+
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;

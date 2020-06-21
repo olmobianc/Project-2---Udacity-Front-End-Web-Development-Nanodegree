@@ -35,9 +35,10 @@ const sections = document.querySelectorAll("section");
 
 // build the nav
 function buildNavBarMenu() {
-    const navbar = document.getElementById('navbar__list');
+    const navbar = document.getElementById('navbar__list'); //getting the ul element
     const contatore = document.getElementsByClassName('landing__container');
 
+    //creating the navbar elements based on how many sections there are
     for(let i=1; i<=contatore.length; i++) {
         const navElements = document.createElement('li');
         const navLinks = document.createElement('a');
@@ -52,10 +53,10 @@ function buildNavBarMenu() {
 // Add class 'active' to section when near top of viewport
 function makeActiveClasses() {
     for(const section of sections) {
-        const rect = section.getBoundingClientRect(); //get Rectangle container
+        const rect = section.getBoundingClientRect(); //get Rectangle container for each section
 
         //adding active class to the sections
-        if(rect.right <= window.innerWidth && rect.bottom <= window.innerHeight) {
+        if(rect.bottom <= window.innerHeight) {
             section.classList.add("your-active-class");
             var whichSection = section.getAttribute("id");
         }
@@ -100,21 +101,15 @@ function makeSmoothScrolling() {
 
 // Build menu 
 document.addEventListener('DOMContentLoaded', function(e) {
-    e.preventDefault();
-
     buildNavBarMenu();
 });
 
 // Scroll to section on link click
 document.addEventListener('DOMContentLoaded', function(e) {
-    e.preventDefault();
-
     makeSmoothScrolling();
 });
 
 // Set sections as active
 document.addEventListener('scroll', function(e) {
-    e.preventDefault();
-
     makeActiveClasses();
 });
