@@ -60,7 +60,7 @@ function makeActiveClasses() {
         //mobile first
         let w = window.innerWidth;
         if(w < 600) {
-            if(rect.bottom <= window.innerHeight + 800) {
+            if(rect.bottom <= window.innerHeight + 600) {
                 section.classList.add("your-active-class");
                 var whichSection = section.getAttribute("id");
             }
