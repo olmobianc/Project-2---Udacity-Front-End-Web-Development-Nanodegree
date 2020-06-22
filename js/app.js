@@ -56,14 +56,28 @@ function makeActiveClasses() {
         const rect = section.getBoundingClientRect(); //get Rectangle container for each section
 
         //adding active class to the sections
-        if(rect.bottom <= window.innerHeight) {
-            section.classList.add("your-active-class");
-            var whichSection = section.getAttribute("id");
-        }
-        else {
-            section.classList.remove("your-active-class");
-        }
 
+        //mobile first
+        let w = window.innerWidth;
+        if(w < 600) {
+            if(rect.bottom <= window.innerHeight + 800) {
+                section.classList.add("your-active-class");
+                var whichSection = section.getAttribute("id");
+            }
+            else {
+                section.classList.remove("your-active-class");
+            }
+        //tablet and desktop    
+        } else {
+            if(rect.bottom <= window.innerHeight) {
+                section.classList.add("your-active-class");
+                var whichSection = section.getAttribute("id");
+            }
+            else {
+                section.classList.remove("your-active-class");
+            }
+        }
+        
         //adding active class to the navbar Links
         const navlinks = document.getElementsByClassName("navLinks");
         for(let i = 0; i < navlinks.length; i++) {
