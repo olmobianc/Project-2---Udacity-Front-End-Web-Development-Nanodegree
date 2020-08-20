@@ -4,12 +4,12 @@ This project required me to build a multi-section landing page, with a dynamical
 ## Building 
 To build I followed the following steps:
 
-Setting up the environment
-Building out my HTML with at least three content sections
-Building the navigation menu
-Adding functionality to distinguish the section in view
-Adding functionality to scroll to sections
-Refactoring and testing the performance
+- setting up the environment
+- building out my HTML with at least three content sections
+- building the navigation menu
+- adding functionality to distinguish the section in view
+- adding functionality to scroll to sections
+- refactoring and testing the performance
 
 ## Languages I used: 
 1. HTML
